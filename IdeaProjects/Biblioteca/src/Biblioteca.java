@@ -15,13 +15,13 @@ public class Biblioteca {
 
     // Método que te devuelva todos los libros a partir de una fecha.
     public ArrayList<Libro> obtenerLibrosPorFecha(Fecha fecha) {
-        ArrayList<Libro> librosPublicados = new ArrayList<>();
-        for (Libro lib: libros){
-            if (lib.publicacion.after(fecha) || lib.publicacion.equals(fecha)){
-                librosPublicados.add(lib);
+        ArrayList<Libro> lanzamiento = new ArrayList<>();
+        for (Libro l: libros){
+            if (l.publicacion.before(fecha) || l.publicacion.equals(fecha)){
+                lanzamiento.add(l);
             }
         }
-        return librosPublicados;
+        return lanzamiento;
     }
 
     /*
