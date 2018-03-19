@@ -61,8 +61,10 @@ class obtenerLibrosPorFechaTest extends Contador {
 
 
     }
-        void afterEach() {
-        super.afterEach();
+    static int contador = 0;
+    @AfterEach
+    void contador (){
+        System.out.println( "Pruebas realizadas: " + ++contador + "\n");
     }
         @DisplayName("Método que te devuelva todos los libros a partir de una fecha.")
         @Test
